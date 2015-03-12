@@ -209,7 +209,7 @@ var data = { Hotels : [ {
    "rating":25.0
 }]};
 
-(function (){
+//(function (){
   
   var SimplifyRatings = function SimplifyRatings(hotel) {
     var rating = hotel.rating;
@@ -223,9 +223,9 @@ var data = { Hotels : [ {
   var SeaBellHotels = function SeaBellHotels(hotel) {
     return hotel.city === "Seattle" || hotel.city === "Bellevue";
   };
-  
-console.log(data.Hotels.map(SimplifyRatings));
-console.log(data.Hotels.filter(SeaBellHotels));
-  
-})();
+
+    var originalHotels = function originalHotels() { return JSON.stringify(data.Hotels, null, 4); };
+    var simplifiedHotels = function simplifiedHotels() { return JSON.stringify(data.Hotels.map(SimplifyRatings), null, 4); };
+    var seaBellHotels = function seaBellHotels() { return JSON.stringify(data.Hotels.filter(SeaBellHotels), null, 4); };
+//})();
 
